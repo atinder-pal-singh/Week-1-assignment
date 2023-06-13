@@ -8,7 +8,20 @@
 */
 
 function isAnagram(str1, str2) {
+    str1 = str1.split("").sort();
+    str2 = str2.split("").sort();
+    
+    if(str1.length != str2.length) {
+      return false;
+    }
+    
+    for (let index = 0; index < str1.length; index++) {
+      if(str1[index] != str2[index]) {
+        return false;
+      }
+    }
 
+    return true;
 }
 
 module.exports = isAnagram;
